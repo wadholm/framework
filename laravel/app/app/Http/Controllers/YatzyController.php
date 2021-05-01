@@ -13,7 +13,7 @@ class YatzyController extends Controller
      * Display the home page.
      *
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View
      */
     public function home(Request $request)
     {
@@ -34,7 +34,7 @@ class YatzyController extends Controller
      * Destroy the session to reset score.
      *
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Routing\Redirector
      */
     public function destroy(Request $request)
     {
@@ -46,7 +46,7 @@ class YatzyController extends Controller
      * Play the game.
      *
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Routing\Redirector
      */
     public function play(Request $request)
     {
@@ -92,7 +92,6 @@ class YatzyController extends Controller
         }
 
         if ($request->session()->has('result')) {
-
             $helper = new Helper();
             $request->session()->put("result", $helper->printHistogram(session("score")));
 
@@ -106,7 +105,7 @@ class YatzyController extends Controller
      * Display the result page.
      *
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View
      */
     public function result(Request $request)
     {
@@ -123,9 +122,8 @@ class YatzyController extends Controller
         $game = new PlayYatzy();
 
         $data["totalScore"] = $game->calculateTotalScore($data["score"]);
-        $data["bonus"] = $game->checkForBonus($request);
+        $data["bonus"] = $game->checkForBonus();
 
         return view('layout.resultYatzy', $data);
     }
 }
-

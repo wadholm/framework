@@ -12,7 +12,7 @@ class Game21Controller extends Controller
      * Display the home page.
      *
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View
      */
     public function home(Request $request)
     {
@@ -34,7 +34,7 @@ class Game21Controller extends Controller
      * Destroy the session to reset score.
      *
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Routing\Redirector
      */
     public function destroy(Request $request)
     {
@@ -46,7 +46,7 @@ class Game21Controller extends Controller
      * Play the game.
      *
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Routing\Redirector
      */
     public function play(Request $request)
     {
@@ -85,7 +85,7 @@ class Game21Controller extends Controller
      * Display the result page.
      *
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View
      */
     public function result(Request $request)
     {
@@ -102,4 +102,3 @@ class Game21Controller extends Controller
         ]);
     }
 }
-

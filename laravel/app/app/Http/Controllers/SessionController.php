@@ -11,7 +11,7 @@ class SessionController extends Controller
      * Display the session page.
      *
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View
      */
     public function session(Request $request)
     {
@@ -25,7 +25,7 @@ class SessionController extends Controller
      * Destroy the session.
      *
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Routing\Redirector
      */
     public function destroy(Request $request)
     {

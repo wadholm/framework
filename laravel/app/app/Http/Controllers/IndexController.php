@@ -10,7 +10,7 @@ class IndexController extends Controller
      * Display the index page.
      *
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View
      */
     public function index()
     {

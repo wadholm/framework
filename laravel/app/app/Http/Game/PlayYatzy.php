@@ -7,11 +7,6 @@ namespace Mack\Game;
 use Mack\Dice\DiceHand;
 use Mack\Helper\Helper;
 
-use function Mos\Functions\{
-    addDices,
-    printHistogram
-};
-
 // use function Mos\Functions\{
 //     destroySession,
 //     redirectTo,
@@ -76,7 +71,6 @@ class PlayYatzy
     public function getCheckedBoxes($request)
     {
         foreach ($this->dices as $dice) {
-
             if ($request->has($dice) && $request->input($dice) == $request->input("round")) {
                 $this->checkedBoxes++;
             }
@@ -191,7 +185,7 @@ class PlayYatzy
         return $this->res["totalScore"];
     }
 
-    public function checkForBonus($request)
+    public function checkForBonus()
     {
         $bonusflag = 0;
         foreach ($this->rounds as $round) {

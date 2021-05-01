@@ -10,7 +10,7 @@ class TestController extends Controller
      * Display the test page.
      *
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Contracts\View\View
      */
     public function test()
     {
