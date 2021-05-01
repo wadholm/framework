@@ -1,6 +1,5 @@
 <?php
 
-use Mack\Dice\Dice;
 use Mack\Dice\GraphicalDice;
 use Mack\Dice\DiceHand;
 

@@ -26,7 +26,7 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "Mack\\": "app/http/"
+            "Mack\\": "app/Http/"
         }
     },
     "autoload-dev": {
