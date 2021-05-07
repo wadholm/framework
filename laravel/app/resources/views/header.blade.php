@@ -8,6 +8,7 @@ $session = url('/session');
 $test = url('/test');
 $game21 = url("/game21/home");
 $yatzy = url("/yatzy/home");
+$book = url('/books');
 
 ?>
 
@@ -29,6 +30,7 @@ $yatzy = url("/yatzy/home");
         <a href="{{ $test }}">Test</a>
         <a href="{{ $game21 }}">21</a>
         <a href="{{ $yatzy }}">Yatzy</a>
+        <a href="{{ $book }}">Books</a>
     </nav>
 </header>
 <main>

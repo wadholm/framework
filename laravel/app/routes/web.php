@@ -7,6 +7,7 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\Game21Controller;
 use App\Http\Controllers\YatzyController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,8 @@ Route::get('/yatzy/home', [YatzyController::class, 'home']);
 Route::get('/yatzy/destroy', [YatzyController::class, 'destroy']);
 Route::any('/yatzy/play', [YatzyController::class, 'play']);
 Route::get('/yatzy/result', [YatzyController::class, 'result']);
+
+Route::get('/books', [BookController::class, 'book']);
 
 
 // Added for mos example code

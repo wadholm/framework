@@ -181,6 +181,16 @@ input[type="checkbox"] { /* change "blue" browser chrome to yellow */
   transform: scale(1.5);
 }
 
+.img {
+    width: 50%;
+}
+
+.books {
+    padding-right: 1em;
+    display: inline-block;
+    width: 30%;
+}
+
 footer {
    background-image: linear-gradient(to right, #252525, #0e0504);
    color: #f2f2f2;
