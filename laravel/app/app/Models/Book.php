@@ -28,4 +28,12 @@ class Book extends Model
         }
         return $this->all;
     }
+
+    public function addBook($title, $isbn, $author, $image)
+    {
+        self::firstOrCreate(
+            ['titel' => $title],
+            ['isbn' => $isbn, 'forfattare' => $author, 'bild' => $image]
+        );
+    }
 }
