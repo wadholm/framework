@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Mack\Game\PlayYatzy;
 use Mack\Helper\Helper;
+use Mack\Highscore\HighscoreHandler;
+use App\Models\Highscore;
 
 class YatzyController extends Controller
 {
@@ -116,14 +118,59 @@ class YatzyController extends Controller
             "bonus" => false,
             "score" => session("score", null),
             "totalScore" => 0,
-            "bonusScore" => 50
+            "bonusScore" => 50,
+            "highscore" => 0,
+            "newHighscore" => false
         ];
 
         $game = new PlayYatzy();
+        $handler = new Highscore();
+        $data["highscore"] = $handler->getHighscore();
 
         $data["totalScore"] = $game->calculateTotalScore($data["score"]);
         $data["bonus"] = $game->checkForBonus();
 
+        if ($data["totalScore"] >= $data["highscore"]) {
+            $data["newHighscore"] = true;
+        }
+
         return view('layout.resultYatzy', $data);
+    }
+
+    /**
+     * Add new highscore.
+     *
+     *
+     * @return \Illuminate\Routing\Redirector
+     */
+    public function addHighscore(Request $request)
+    {
+        $name = $request->input('name');
+        $score = $request->input('score');
+
+        $handler = new HighscoreHandler();
+        $handler->addHighscore($name, $score);
+
+        return redirect('yatzy/highscore');
+    }
+
+    /**
+     * Display the highscore page.
+     *
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function highscore()
+    {
+        $data = [
+            "title" => "Yatzy High Score",
+            "header" => "Yatzy High Score",
+            "message" => "Presenting the High Score for Yatzy Game",
+        ];
+
+        $handler = new Highscore();
+        $data["result"] = $handler->presentHighscore();
+
+        return view('layout.highscore', $data);
     }
 }

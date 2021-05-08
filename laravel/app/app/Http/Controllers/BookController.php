@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Mack\Book\BookHandler;
-
+// use Mack\Book\BookHandler;
+use App\Models\Book;
 
 class BookController extends Controller
 {
@@ -16,7 +16,7 @@ class BookController extends Controller
      */
     public function book()
     {
-        $book = new BookHandler();
+        $book = new Book();
 
         // $title = "Frankenstein";
         // $isbn = "9789176451977";

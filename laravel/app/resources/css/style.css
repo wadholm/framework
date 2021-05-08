@@ -191,6 +191,32 @@ input[type="checkbox"] { /* change "blue" browser chrome to yellow */
     width: 30%;
 }
 
+table {
+    border: 1px solid rgba(33, 43, 57, 0.267);
+    border-collapse: collapse;
+    padding: 1em;
+    margin: 1.5em 0;
+}
+
+th {
+    background-color: #252525;
+    color: #f2f2f2;
+    border-collapse: collapse;
+    padding: 0.5em 1em;
+}
+
+tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+tr:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+td {
+    padding: 0.5em 1em;
+}
+
 footer {
    background-image: linear-gradient(to right, #252525, #0e0504);
    color: #f2f2f2;
