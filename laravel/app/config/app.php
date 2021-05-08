@@ -230,4 +230,10 @@ return [
 
     ],
 
+    'debug_blacklist' => [
+        '_ENV' => [
+            'DB_PASSWORD',
+        ],
+    ],
+
 ];

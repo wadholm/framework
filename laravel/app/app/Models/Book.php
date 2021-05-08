@@ -18,8 +18,11 @@ class Book extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     private $all;
     public $table = 'book';
+    protected $guarded = [];
 
     public function getAll(): array
     {
